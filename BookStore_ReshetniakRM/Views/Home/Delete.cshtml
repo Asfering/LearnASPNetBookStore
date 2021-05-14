@@ -1,0 +1,24 @@
+﻿
+
+@{
+    ViewBag.Title = "Удалить книгу";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model  BookStore_ReshetniakRM.Models.Book
+
+<h2>Удаление книги</h2>
+
+
+    <dl>
+        <dt>Название</dt>
+        <dd>@Html.DisplayFor(model => model.Name)</dd>
+    </dl>
+    <dt>Автор</dt>
+    <dd>@Html.DisplayFor(model => model.Author)</dd>
+    <dt>Цена</dt>
+    <dd>@Html.DisplayFor(model => model.Price)</dd>
+@using (Html.BeginForm())
+{
+    <input type="submit" value="Удалить" />
+}
+

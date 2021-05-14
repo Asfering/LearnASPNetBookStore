@@ -1,0 +1,31 @@
+﻿@model  BookStore_ReshetniakRM.Models.Book
+
+@{
+    ViewBag.Title = "Создать книгу";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Новая книга</h2>
+
+@using (Html.BeginForm("Create", "Home", FormMethod.Post))
+{
+        <p>
+            @Html.LabelFor(m => m.Name, "Название книги")
+            <br />
+            @Html.EditorFor(m => m.Name)
+            @Html.ValidationMessageFor(m => m.Name)
+        </p>
+        <p>
+            @Html.LabelFor(m => m.Author, "Автор")
+            <br />
+            @Html.EditorFor(m => m.Author)
+            @Html.ValidationMessageFor(m => m.Author)
+        </p>
+        <p>
+            @Html.LabelFor(m => m.Price, "Цена")
+            <br />
+            @Html.EditorFor(m => m.Price)
+            @Html.ValidationMessageFor(m => m.Price)
+        </p>
+        <p><input type="submit" value="Добавить" /></p>
+}
